@@ -68,7 +68,6 @@ Welcome to the PocketBase Templates repository! <br/>
 This is a community-driven collection of templates tailored for PocketBase.
 
 # Templates
-<style>img {width: 100%;height: 800px;background-color:white}</style>
 `;
 
 for (let index = 0; index < files.length; index++) {
