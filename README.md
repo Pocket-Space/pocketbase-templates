@@ -5,8 +5,6 @@ This is a community-driven collection of templates tailored for PocketBase.
 
 # Templates
 
-<style>img {width: 100%;height: 800px;background-color:white}</style>
-
 <details ><summary style="font-size:24px">Blog</summary><img src="templates/blog/schema.svg" /></details>
 <details ><summary style="font-size:24px">Courses</summary><img src="templates/courses/schema.svg" /></details>
 <details ><summary style="font-size:24px">Portfolio</summary><img src="templates/portfolio/schema.svg" /></details>
