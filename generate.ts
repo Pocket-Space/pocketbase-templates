@@ -13,7 +13,7 @@ const files = filePaths.map((file) => {
 });
 
 const createTemplateDetails = (templateName: string, svgPath: string, schemaJson: string) => {
-  return `\n<details ><summary style="font-size:24px">${templateName}</summary><img src="${svgPath}" /></details>`;
+  return `\n<details ><summary style="font-size:24px">${templateName}</summary><img src="${svgPath}" style="width:100%;height:600px;background-color:white" alt="${templateName}"/></details>`;
 };
 
 type TypeMappingFn = (
