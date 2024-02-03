@@ -1,0 +1,35 @@
+Table users {
+  id text [pk, not null]
+  name  text [null]
+  avatar  text [null]
+  created_at timestamp
+}
+Table purchases {
+  id text [pk, not null]
+  course  text  [not null, ref: - courses.id]
+  user  text  [not null, ref: - users.id]
+  created_at timestamp
+}
+Table lessons {
+  id text [pk, not null]
+  image  text [null]
+  title  text [not null]
+  content  text [not null]
+  order  int [null]
+  course  text  [not null, ref: - courses.id]
+  created_at timestamp
+}
+Table category {
+  id text [pk, not null]
+  name  text [not null]
+  created_at timestamp
+}
+Table courses {
+  id text [pk, not null]
+  title  text [not null]
+  description  text [not null]
+  price  text [not null]
+  category  text  [not null, ref: - category.id]
+  image  text [null]
+  created_at timestamp
+}

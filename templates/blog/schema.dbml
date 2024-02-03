@@ -1,0 +1,31 @@
+Table users {
+  id text [pk, not null]
+  name  text [null]
+  avatar  text [null]
+  created_at timestamp
+}
+Table categories {
+  id text [pk, not null]
+  name  text [not null]
+  created_at timestamp
+}
+Table posts {
+  id text [pk, not null]
+  image  text [null]
+  slug  text [not null]
+  title  text [not null]
+  summary  text [null]
+  content  text [not null]
+  keywords  text [null]
+  categories  text  [null, ref: > categories.id]
+  is_draft  boolean [null]
+  date  timestamp [not null]
+  comments  text  [null, ref: > comments.id]
+  created_at timestamp
+}
+Table comments {
+  id text [pk, not null]
+  name  text [not null]
+  content  text [not null]
+  created_at timestamp
+}

@@ -1,0 +1,41 @@
+Table users {
+  id text [pk, not null]
+  name  text [null]
+  avatar  text [null]
+  created_at timestamp
+}
+Table work_experiences {
+  id text [pk, not null]
+  company_name  text [null]
+  location  text [null]
+  role  text [null]
+  description  text [null]
+  started_at  timestamp [not null]
+  ended_at  timestamp [null]
+  type work_experiences_type [null]
+  created_at timestamp
+}
+Table skills {
+  id text [pk, not null]
+  name  text [not null]
+  created_at timestamp
+}
+Table projects {
+  id text [pk, not null]
+  image  text [null]
+  title  text [not null]
+  description  text [not null]
+  status projects_status [not null]
+  is_draft  boolean [null]
+  skills  text  [null, ref: - skills.id]
+  created_at timestamp
+}
+Enum work_experiences_type {
+  "remote"
+  "hybrid"
+  "in-office"
+}
+Enum projects_status {
+  "in_progress"
+  "completed"
+}

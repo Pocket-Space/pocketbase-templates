@@ -1,0 +1,19 @@
+{
+  "name": "@pocketspace/pocketbase-templates",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "npx tsx generate.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@softwaretechnik/dbml-renderer": "^1.0.27",
+    "@types/node": "^20.11.16",
+    "fast-glob": "^3.3.2",
+    "pocketbase": "^0.21.0"
+  }
+}
