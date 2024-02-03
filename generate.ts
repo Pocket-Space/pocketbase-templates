@@ -13,7 +13,8 @@ const files = filePaths.map((file) => {
 });
 
 const createTemplateDetails = (templateName: string, svgPath: string, schemaJson: string) => {
-  return `\n<details ><summary style="font-size:24px">${templateName}</summary><img src="${svgPath}" style="width:100%;height:600px;background-color:white" alt="${templateName}"/></details>`;
+  // return `\n<details ><summary style="font-size:24px">${templateName}</summary><img src="${svgPath}" style="width:100%;height:600px;background-color:white" alt="${templateName}"/></details>`;
+  return `\n<details ><summary style="font-size:24px">${templateName}</summary><img src="${svgPath}" alt="${templateName}"/></details>`;
 };
 
 type TypeMappingFn = (
@@ -78,6 +79,7 @@ This is a community-driven collection of templates tailored for PocketBase.
 `;
 
 for (let index = 0; index < files.length; index++) {
+  console.log("Generating template for", filePaths[index].split("/")[1], "...");
   let output = "";
   let global = "";
   const file = files[index];
@@ -109,7 +111,6 @@ for (let index = 0; index < files.length; index++) {
   }
   output += global;
 
-  console.log(output);
   fs.writeFileSync(path.join(filePaths[index].replace("schema.json", "schema.dbml")), output);
   const result = run(output, "svg");
   fs.writeFileSync(path.join(filePaths[index].replace("schema.json", "schema.svg")), result);
@@ -118,7 +119,8 @@ for (let index = 0; index < files.length; index++) {
   const templateName = name.charAt(0).toUpperCase() + name.slice(1);
   readme += createTemplateDetails(
     templateName,
-    `templates/${name}/schema.svg`,
+    // `templates/${name}/schema.svg`,
+    `templates/${name}/pb_diagram.png`,
     fs.readFileSync(filePaths[index], "utf-8")
   );
 }

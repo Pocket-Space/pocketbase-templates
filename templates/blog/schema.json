@@ -84,6 +84,49 @@
     "options": {}
   },
   {
+    "id": "qomnnqif1itbgaa",
+    "name": "comments",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "system": false,
+        "id": "vffpspw5",
+        "name": "name",
+        "type": "text",
+        "required": true,
+        "presentable": false,
+        "unique": false,
+        "options": {
+          "min": 2,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "system": false,
+        "id": "hme3kuiv",
+        "name": "content",
+        "type": "text",
+        "required": true,
+        "presentable": false,
+        "unique": false,
+        "options": {
+          "min": 2,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ],
+    "indexes": [],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
     "id": "qk0j56ou29sx4gm",
     "name": "posts",
     "type": "base",
@@ -211,22 +254,6 @@
           "min": "",
           "max": ""
         }
-      },
-      {
-        "system": false,
-        "id": "lxkllofq",
-        "name": "comments",
-        "type": "relation",
-        "required": false,
-        "presentable": false,
-        "unique": false,
-        "options": {
-          "collectionId": "qomnnqif1itbgaa",
-          "cascadeDelete": false,
-          "minSelect": null,
-          "maxSelect": null,
-          "displayFields": null
-        }
       }
     ],
     "indexes": ["CREATE INDEX `idx_qr4G9xC` ON `posts` (`categories`)"],
@@ -238,44 +265,48 @@
     "options": {}
   },
   {
-    "id": "qomnnqif1itbgaa",
-    "name": "comments",
+    "id": "b4hspx7vdgy93cd",
+    "name": "post_comments",
     "type": "base",
     "system": false,
     "schema": [
       {
         "system": false,
-        "id": "vffpspw5",
-        "name": "name",
-        "type": "text",
+        "id": "yg93xjpw",
+        "name": "post",
+        "type": "relation",
         "required": true,
         "presentable": false,
         "unique": false,
         "options": {
-          "min": 2,
-          "max": null,
-          "pattern": ""
+          "collectionId": "qk0j56ou29sx4gm",
+          "cascadeDelete": true,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": null
         }
       },
       {
         "system": false,
-        "id": "hme3kuiv",
-        "name": "content",
-        "type": "text",
+        "id": "1tk50tyn",
+        "name": "comment",
+        "type": "relation",
         "required": true,
         "presentable": false,
         "unique": false,
         "options": {
-          "min": 2,
-          "max": null,
-          "pattern": ""
+          "collectionId": "qomnnqif1itbgaa",
+          "cascadeDelete": false,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": null
         }
       }
     ],
     "indexes": [],
     "listRule": "",
     "viewRule": "",
-    "createRule": "",
+    "createRule": null,
     "updateRule": null,
     "deleteRule": null,
     "options": {}
